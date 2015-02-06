@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Contact.all.each do |contact|
+  contact.update_attributes(notes: contact.notes.reverse, email: contact.email.upcase)
+end
